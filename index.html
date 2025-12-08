@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prem Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- IMAGE-LIKE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="luxury-header">
+  <div class="header-wrap">
+
+    <!-- LEFT -->
+    <ul class="menu left-menu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
+    </ul>
+
+    <!-- CENTER -->
+   <div class="brand-logo pf-badge">
+  PF
+</div>
+
+
+
+    <!-- RIGHT -->
+    <ul class="menu right-menu">
+      <li><a href="#">Wedding Films</a></li>
+      <li><a href="#">Contact</a></li>
+
+      <li class="icons-item">
+        <a href="#" class="icon-circle"><i class="fa-solid fa-phone"></i></a>
+        <a href="#" class="icon-circle"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="icon-circle"><i class="fa-brands fa-instagram"></i></a>
+      </li>
+    </ul>
+
+    <!-- MOBILE BUTTON -->
+    <div class="menu-btn" onclick="openMenu()">☰</div>
+
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Portfolio</a>
+  <a href="#">Wedding Films</a>
+  <a href="#">Contact</a>
+
+  <!-- ✅ ICONS INSIDE MOBILE MENU -->
+  <div class="mobile-icons">
+    <a href="#" class="icon-circle"><i class="fa-solid fa-phone"></i></a>
+    <a href="#" class="icon-circle"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#" class="icon-circle"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+</div>
+
+<!-- ================= SLIDER ================= -->
+<section class="premium-slider">
+
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+
+  <!-- ✅ EXACT IMAGE-LIKE BANNER TEXT -->
+ <div class="banner-content-left">
+  <h1>Stories from Prem Frame</h1>
+  <p> Premium Wedding Photography</p>
+</div>
+
+
+
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  function openMenu(){
+    document.getElementById("mobileMenu").classList.add("active");
+  }
+
+  function closeMenu(){
+    document.getElementById("mobileMenu").classList.remove("active");
+  }
+
+  window.addEventListener("scroll", function(){
+    document.querySelector(".luxury-header")
+      .classList.toggle("scrolled", window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>
