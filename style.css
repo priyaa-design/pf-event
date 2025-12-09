@@ -1,3 +1,5 @@
+/* ================= BASE RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #000;
+  overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
@@ -34,6 +37,8 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+/* ================= MENUS ================= */
 
 .menu {
   display: flex;
@@ -68,7 +73,7 @@ body {
   width: 100%;
 }
 
-/* ================= ZW-STYLE PF LOGO BADGE ================= */
+/* ================= LOGO BADGE ================= */
 
 .pf-badge {
   width: 52px;
@@ -87,13 +92,11 @@ body {
   transition: 0.4s;
 }
 
-/* Subtle premium glow on hover */
 .pf-badge:hover {
   box-shadow: 0 0 18px rgba(255,255,255,0.35);
   transform: scale(1.05);
 }
 
-/* Small brand text under logo (optional like ZW site) */
 .pf-badge::after {
   content: 'PREM FRAME';
   position: absolute;
@@ -104,8 +107,7 @@ body {
   opacity: 0.8;
 }
 
-
-/* ================= CUTE ICONS ================= */
+/* ================= ICONS ================= */
 
 .icons-item {
   display: flex;
@@ -198,15 +200,17 @@ body {
 }
 
 .slide:nth-child(1) {
-  background-image: url("img/banner\ \(2\).jpg");
+  background-image: url("img/banner (2).jpg");
 }
+
 .slide:nth-child(2) {
   animation-delay: 6s;
-  background-image: url("img/img\ \(2\).jpeg");
+  background-image: url("img/img (2).jpeg");
 }
+
 .slide:nth-child(3) {
   animation-delay: 12s;
-  background-image: url("img/banner\ \(1\).jpg");
+  background-image: url("img/banner (1).jpg");
 }
 
 @keyframes slideAnimation {
@@ -224,8 +228,7 @@ body {
   background: rgba(0,0,0,0.55);
 }
 
-/* ================= ✅ EXACT IMAGE-LIKE TEXT ================= */
-/* ================= EXACT THIN IMAGE STYLE ================= */
+/* ================= BANNER TEXT ================= */
 
 .banner-content-left {
   position: absolute;
@@ -236,43 +239,270 @@ body {
   color: #ffffff;
 }
 
-/* ✅ MAIN TITLE – THIN, ELEGANT, PREMIUM */
 .banner-content-left h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;        /* image-size feel */
-  font-weight: 300;      /* ✅ THIN weight */
+  font-size: 56px;
+  font-weight: 300;
   line-height: 1.15;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
-  white-space: nowrap;  /* ✅ desktop-la break ஆகாது */
+  white-space: nowrap;
   text-shadow: 0 10px 35px rgba(0,0,0,0.45);
 }
 
-/* ✅ SUB TITLE – LIGHT & SOFT */
 .banner-content-left p {
   font-family: 'Playfair Display', serif;
   font-size: 19px;
-  font-weight: 300;     /* ✅ THIN */
+  font-weight: 300;
   opacity: 0.9;
   letter-spacing: 0.5px;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= RESPONSIVE CLEAN VERSION ================= */
 
-@media (max-width: 900px) {
+/* Header spacing */
+@media (max-width: 1200px) {
+  .menu {
+    gap: 22px;
+  }
+}
+
+/* Tablet & Mobile Header */
+@media (max-width: 992px) {
+
+  .header-wrap {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .pf-badge {
+    position: relative;
+    left: 0;
+    transform: none;
+  }
+
+  .left-menu,
+  .right-menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+    margin-left: auto;
+    font-size: 30px;
+  }
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 768px) {
+
+  .mobile-menu {
+    width: 80%;
+    padding: 90px 30px;
+  }
+
+  .mobile-menu a {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.95;
+    margin-bottom: 22px;
+  }
+
+  .mobile-icons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 18px;
+  }
+
+  .mobile-icons .icon-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+    background: rgba(255,255,255,0.18);
+  }
+
+  .mobile-icons .icon-circle:hover {
+    background: white;
+    color: black;
+  }
+}
+
+/* ================= BANNER RESPONSIVE (LEFT ONLY) ================= */
+
+@media (max-width: 1100px) {
+
+  .banner-content-left {
+    left: 6%;
+    bottom: 22%;
+    max-width: 600px;
+  }
+
+  .banner-content-left h1 {
+    font-size: 48px;
+    white-space: normal;
+  }
+
+  .banner-content-left p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+
   .banner-content-left {
     left: 6%;
     right: 6%;
-    bottom: 22%;
+    bottom: 16%;
     max-width: 100%;
   }
 
   .banner-content-left h1 {
     font-size: 30px;
-    white-space: normal;   /* ✅ mobile-la wrap allow */
+    line-height: 1.2;
+    white-space: normal;
   }
 
   .banner-content-left p {
     font-size: 14px;
   }
+}
+
+@media (max-width: 480px) {
+
+  .banner-content-left {
+    left: 5%;
+    right: 5%;
+    bottom: 14%;
+  }
+
+  .banner-content-left h1 {
+    font-size: 24px;
+  }
+
+  .banner-content-left p {
+    font-size: 12.5px;
+  }
+
+  .pf-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+/* ================= PREMIUM ABOUT SECTION ================= */
+
+.prem-about {
+  background: #fff;
+  padding: 120px 0;
+}
+
+.prem-about-wrap {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT IMAGE */
+.prem-img-left img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* CENTER STACK */
+.prem-img-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.prem-img-stack img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.prem-content {
+  color: #111;
+}
+
+.prem-tag {
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.prem-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin: 25px 0;
+  line-height: 1.35;
+}
+
+.prem-content p {
+  font-size: 15px;
+  line-height: 1.9;
+  opacity: 0.75;
+  margin-bottom: 35px;
+}
+
+.prem-btn {
+  display: inline-block;
+  padding: 14px 38px;
+  border: 1px solid #111;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.prem-btn:hover {
+  background: #111;
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .prem-about-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .prem-img-left img {
+    height: 340px;
+  }
+
+  .prem-img-stack img {
+    height: 130px;
+  }
+
+  .prem-content h2 {
+    font-size: 30px;
+  }
+}
+/* ================= ZW STYLE SCROLL HEADER ================= */
+
+.luxury-header.scrolled {
+  background: linear-gradient(to right, #000, #111);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.6);
+  padding: 12px 0;
+}
+
+.luxury-header.scrolled .menu a {
+  opacity: 0.8;
+}
+
+.luxury-header.scrolled .pf-badge {
+  transform: scale(0.9);
 }
